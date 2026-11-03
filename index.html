@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shopscape – Shop Everything You Love</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top" id="nav">
+  <div class="container">
+    <a class="navbar-brand brand" href="#home" data-page="home">
+      <svg width="44" height="44" viewBox="0 0 64 64" aria-hidden="true">
+        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6fcdff"/><stop offset="1" stop-color="#1d8fe0"/></linearGradient></defs>
+        <rect x="6" y="18" width="52" height="40" rx="12" fill="url(#lg)"/>
+        <path d="M22 26v-6a10 10 0 0 1 20 0v6" fill="none" stroke="#1d8fe0" stroke-width="4" stroke-linecap="round"/>
+        <path d="M14 42c6-8 12-8 18 0s12 8 18 0" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="44" cy="30" r="3" fill="#fff"/>
+      </svg>
+      Shop<span>scape</span>
+    </a>
+    <button class="navbar-toggler border-0" data-bs-toggle="collapse" data-bs-target="#menu"><i class="bi bi-list fs-2"></i></button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#home" data-page="home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#products" data-page="products">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact" data-page="contact">Contact</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-2">
+        <button class="cart-btn" data-bs-toggle="offcanvas" data-bs-target="#cartCanvas" aria-label="Cart">
+          <i class="bi bi-bag"></i><span class="cart-badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main>
+<!-- HOME -->
+<section class="page" id="page-home">
+  <div class="hero">
+    <div class="blob b1"></div><div class="blob b2"></div>
+    <div class="container position-relative">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="badge-soft"><i class="bi bi-stars"></i> New season. New styles.</span>
+          <h1 class="mt-3">Everything you need, <span>in one scape.</span></h1>
+          <p class="lead text-secondary mt-3">Fresh groceries, sharp menswear and sneakers you'll live in &mdash; delivered fast, priced right.</p>
+          <div class="d-flex gap-3 flex-wrap mt-4">
+            <button class="btn btn-sky btn-lg" data-go="products">Shop Now <i class="bi bi-arrow-right ms-1"></i></button>
+            <button class="btn btn-outline-sky btn-lg" data-go="contact">Contact Us</button>
+          </div>
+          <div class="d-flex gap-4 mt-4 flex-wrap">
+            <div><h4 class="fw-bold mb-0">40+</h4><small class="text-secondary">Products</small></div>
+            <div><h4 class="fw-bold mb-0">24h</h4><small class="text-secondary">Delivery</small></div>
+            <div><h4 class="fw-bold mb-0">4.9★</h4><small class="text-secondary">Rating</small></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="hero-card">
+            <div class="hero-emojis"><span>🛒</span><span>👔</span><span>👟</span><span>🍎</span></div>
+            <h5 class="mt-3 fw-bold">Free shipping over $50</h5>
+            <p class="text-secondary mb-0">Use code <b class="text-primary">SKY10</b> for 10% off your first order</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="text-center mb-5 reveal"><h2 class="section-title">Shop by Category</h2></div>
+      <div class="row g-4" id="catGrid"></div>
+    </div>
+  </div>
+
+  <div class="section pt-0">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-end mb-4 reveal">
+        <h2 class="section-title mb-0">Featured Picks</h2>
+        <button class="btn btn-outline-sky btn-sm" data-go="products">View all</button>
+      </div>
+      <div class="row g-4" id="featuredGrid"></div>
+    </div>
+  </div>
+
+  <div class="section pt-0">
+    <div class="container reveal">
+      <div class="promo">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h2 class="fw-bold">Weekend Sale — up to 30% off</h2>
+            <p class="mb-md-0">Stock up on groceries, refresh your wardrobe and grab new kicks.</p>
+          </div>
+          <div class="col-md-4 text-md-end"><button class="btn btn-light rounded-pill px-4 fw-semibold" data-go="products">Grab the deals</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section pt-0">
+    <div class="container"><div class="row g-3">
+      <div class="col-6 col-md-3 reveal"><div class="feature"><i class="bi bi-truck"></i><h6 class="fw-bold">Fast Delivery</h6><small class="text-secondary">Within 24 hours</small></div></div>
+      <div class="col-6 col-md-3 reveal"><div class="feature"><i class="bi bi-shield-check"></i><h6 class="fw-bold">Secure Payment</h6><small class="text-secondary">100% protected</small></div></div>
+      <div class="col-6 col-md-3 reveal"><div class="feature"><i class="bi bi-arrow-repeat"></i><h6 class="fw-bold">Easy Returns</h6><small class="text-secondary">30-day policy</small></div></div>
+      <div class="col-6 col-md-3 reveal"><div class="feature"><i class="bi bi-headset"></i><h6 class="fw-bold">24/7 Support</h6><small class="text-secondary">We're here to help</small></div></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="page" id="page-products">
+  <div class="section">
+    <div class="container">
+      <div class="mb-4"><h2 class="section-title">Our Products</h2></div>
+      <div class="row g-3 mb-3">
+        <div class="col-md-6"><input id="search" class="form-control" placeholder="🔍  Search products..."></div>
+        <div class="col-md-3 ms-md-auto">
+          <select id="sort" class="form-select">
+            <option value="default">Sort: Featured</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="name">Name: A–Z</option>
+          </select>
+        </div>
+      </div>
+      <div class="mb-4" id="filters"></div>
+      <div class="row g-4" id="productGrid"></div>
+      <div class="text-center py-5 d-none" id="noResults"><div style="font-size:3rem">🔎</div><h5>No products found</h5><button class="btn btn-sky mt-2" id="resetBtn">Reset filters</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="page" id="page-contact">
+  <div class="section">
+    <div class="container">
+      <div class="text-center mb-5"><h2 class="section-title">Get in Touch</h2><p class="text-secondary">Questions, feedback or order help? We'd love to hear from you.</p></div>
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="info-item"><i class="bi bi-geo-alt"></i><div><b>Address</b><br><small class="text-secondary">12 Skyline Avenue, Cloud City</small></div></div>
+          <div class="info-item"><i class="bi bi-envelope"></i><div><b>Email</b><br><small class="text-secondary">hello@shopscape.com</small></div></div>
+          <div class="info-item"><i class="bi bi-telephone"></i><div><b>Phone</b><br><small class="text-secondary">+1 (555) 012-3456</small></div></div>
+          <div class="info-item"><i class="bi bi-clock"></i><div><b>Hours</b><br><small class="text-secondary">Mon–Sun, 9:00 – 21:00</small></div></div>
+        </div>
+        <div class="col-lg-7">
+          <form class="contact-card needs-validation" id="contactForm" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6"><label class="form-label fw-medium">Name</label><input class="form-control" id="cName" required minlength="2"><div class="invalid-feedback">Please enter your name.</div></div>
+              <div class="col-md-6"><label class="form-label fw-medium">Email</label><input type="email" class="form-control" id="cEmail" required><div class="invalid-feedback">Enter a valid email.</div></div>
+              <div class="col-12"><label class="form-label fw-medium">Subject</label><input class="form-control" id="cSub" required><div class="invalid-feedback">Add a subject.</div></div>
+              <div class="col-12"><label class="form-label fw-medium">Message</label><textarea rows="5" class="form-control" id="cMsg" required minlength="10"></textarea><div class="invalid-feedback">Message must be at least 10 characters.</div></div>
+              <div class="col-12"><button class="btn btn-sky btn-lg w-100" type="submit"><i class="bi bi-send me-2"></i>Send Message</button></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h4 class="fw-bold text-white">Shop<span style="color:var(--sky)">scape</span></h4>
+        <p>Your all-in-one marketplace for groceries, fashion and footwear.</p>
+        <div class="social"><a><i class="bi bi-facebook"></i></a><a><i class="bi bi-instagram"></i></a><a><i class="bi bi-twitter-x"></i></a><a><i class="bi bi-youtube"></i></a></div>
+      </div>
+      <div class="col-6 col-md-2"><h6 class="text-white">Explore</h6><p class="mb-1"><a data-go="home">Home</a></p><p class="mb-1"><a data-go="products">Products</a></p><p class="mb-1"><a data-go="contact">Contact</a></p></div>
+      <div class="col-6 col-md-3"><h6 class="text-white">Categories</h6><p class="mb-1"><a data-cat="Grocery">Grocery</a></p><p class="mb-1"><a data-cat="Formal">Men's Formal</a></p><p class="mb-1"><a data-cat="Casual">Men's Casual</a></p><p class="mb-1"><a data-cat="Shoes">Shoes</a></p></div>
+      <div class="col-md-3"><h6 class="text-white">Newsletter</h6>
+        <div class="input-group"><input id="nlEmail" class="form-control" placeholder="Your email" style="border-radius:50px 0 0 50px"><button class="btn btn-sky" id="nlBtn" style="border-radius:0 50px 50px 0">Join</button></div>
+      </div>
+    </div>
+    <hr class="border-secondary mt-4"><p class="text-center mb-0 small">© 2026 Shopscape. All rights reserved. Dummy store for demo purposes.</p>
+  </div>
+</footer>
+
+<!-- CART -->
+<div class="offcanvas offcanvas-end" id="cartCanvas" style="width:400px;max-width:100%">
+  <div class="offcanvas-header" style="background:var(--sky-light)">
+    <h5 class="offcanvas-title fw-bold"><i class="bi bi-bag-heart me-2"></i>Your Cart</h5>
+    <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column">
+    <div id="cartItems" class="flex-grow-1 overflow-auto"></div>
+    <div class="border-top pt-3">
+      <div class="d-flex justify-content-between"><span>Subtotal</span><b id="subtotal">$0.00</b></div>
+      <div class="d-flex justify-content-between"><span>Shipping</span><b id="shipping">$0.00</b></div>
+      <div class="d-flex justify-content-between fs-5 mt-1"><b>Total</b><b class="text-primary" id="total">$0.00</b></div>
+      <button class="btn btn-sky w-100 mt-3" id="checkoutBtn">Checkout</button>
+      <button class="btn btn-outline-sky w-100 mt-2" id="clearBtn">Clear cart</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast-wrap" id="toasts"></div>
+<button class="btn btn-sky" id="topBtn" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
